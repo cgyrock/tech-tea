@@ -13,6 +13,7 @@ deploy:
   skip-cleanup: true
   github-token: $GH_TOKEN
   keep-history: true
+  verbose: true
   on:
-    branch: https://github.com/cgyrock/tech-tea.git
+    branch: master
   local-dir: public
