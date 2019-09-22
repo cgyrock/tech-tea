@@ -199,6 +199,16 @@ Travis CI 会拉取我们的代码，然后按照我们的.travis.yml配置，�
 具体的操作步骤可以参考Hexo官网的相关文档 
 - [将 Hexo 部署到 GitHub Pages](https://hexo.io/zh-cn/docs/github-pages)
 
+## 一个小小的bug fix
+
+站点部署好后，你可能会发现浏览器做下角一直显示加载中（如果你使用chrome）的话。但是看起来页面已经加载完毕了。
+
+只用开发者工具查看网络请求的话就会发现，一直在请求http://ajax.googleapis.com/jquery/2.0.3/jquery.min.js，这是因为默认主题使用的jquery的cdn是谷歌的，被墙了= =
+
+需要到 theme/landspace/layout/_partial/ 目录下修改after-footer.ejs文件。
+
+把第17行//ajax.googleapis.com/jquery/2.0.3/jquery.min.js替换成//cdn.bootcss.com/jquery/2.0.3/jquery.min.js，使用国内的jquey cdn
+
 ## 总结
 
 本文只是介绍了最快的方式利用Hexo来搭建自己的个人博客，Hexo本身还有很多可以自定义的地方，比如更换站点的主题，自己定义页面和模板。
