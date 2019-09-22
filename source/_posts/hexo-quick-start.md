@@ -190,24 +190,30 @@ $ hexo generate
 
 Travis CI 是一个公共的持续集成服务。
 
-只需把我们的github账户授权给它，然后在我们源码根目录添加.travis.yml配置文件，就可以实现git commit的时候自动为我们部署静态站点。
+只需把我们的github账户授权给它，然后在我们源码根目录添加.travis.yml配置文件。
 
-Travis CI 会拉取我们的代码，然后按照我们的.travis.yml配置，执行Hexo命令生成静态站点文件，最后在我们的repository创建一个gh-pages分支，并把静态站点文件提交到这个分支下。
+就可以实现对master分支push代码的时候自动为我们生成并部署静态站点。
 
-在我们的GitHub Pages配置里指定gh-pages分支，就可以通过url https://<你的 GitHub 用户名>.github.io/<repository 的名字> 在互联网上访问我们的站点了。
+Travis CI 会拉取我们的代码，然后按照.travis.yml文件的配置，在他们的服务器上执行Hexo命令生成静态站点文件。
+
+Travis CI 生成静态站点后，会把静态站点文件提交到gh-pages分支下（需要自己提前创建这个分支）。
+
+在我们的GitHub Pages配置里指定gh-pages分支作为发布分支。
+
+现在可以使用url https://<你的 GitHub 用户名>.github.io/<repository 的名字> 在互联网上访问我们的站点了。
 
 具体的操作步骤可以参考Hexo官网的相关文档 
 - [将 Hexo 部署到 GitHub Pages](https://hexo.io/zh-cn/docs/github-pages)
 
 ## 一个小小的bug fix
 
-站点部署好后，你可能会发现浏览器做下角一直显示加载中（如果你使用chrome）的话。但是看起来页面已经加载完毕了。
+站点部署好后，你可能会发现浏览器左下角一直显示加载中（如果你使用chrome）的话。但是看起来页面已经加载完毕了。
 
-只用开发者工具查看网络请求的话就会发现，一直在请求http://ajax.googleapis.com/jquery/2.0.3/jquery.min.js，这是因为默认主题使用的jquery的cdn是谷歌的，被墙了= =
+用开发者工具查看网络请求的话就会发现，一直在请求 http://ajax.googleapis.com/jquery/2.0.3/jquery.min.js ，这是因为默认主题使用的jquery的cdn是谷歌的，被墙了= =
 
 需要到 theme/landspace/layout/_partial/ 目录下修改after-footer.ejs文件。
 
-把第17行//ajax.googleapis.com/jquery/2.0.3/jquery.min.js替换成//cdn.bootcss.com/jquery/2.0.3/jquery.min.js，使用国内的jquey cdn
+把第17行 *//ajax.googleapis.com/jquery/2.0.3/jquery.min.js* 替换成 *//cdn.bootcss.com/jquery/2.0.3/jquery.min.js* ，使用国内的jquey cdn
 
 ## 总结
 
