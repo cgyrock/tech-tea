@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Tech-Tea">
-<meta property="og:url" content="http://www.tech-tea.cn/index.html">
+<meta property="og:url" content="https://tech-tea.cn/index.html">
 <meta property="og:site_name" content="Tech-Tea">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.tech-tea.cn"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tech-tea.cn"></form>
       </div>
     </div>
   </div>
@@ -225,6 +225,10 @@
 <ul>
 <li><a href="https://hexo.io/zh-cn/docs/github-pages" target="_blank" rel="noopener">将 Hexo 部署到 GitHub Pages</a></li>
 </ul>
+<h2 id="一个小小的bug-fix"><a href="#一个小小的bug-fix" class="headerlink" title="一个小小的bug fix"></a>一个小小的bug fix</h2><p>站点部署好后，你可能会发现浏览器做下角一直显示加载中（如果你使用chrome）的话。但是看起来页面已经加载完毕了。</p>
+<p>只用开发者工具查看网络请求的话就会发现，一直在请求<a href="http://ajax.googleapis.com/jquery/2.0.3/jquery.min.js，这是因为默认主题使用的jquery的cdn是谷歌的，被墙了=" target="_blank" rel="noopener">http://ajax.googleapis.com/jquery/2.0.3/jquery.min.js，这是因为默认主题使用的jquery的cdn是谷歌的，被墙了=</a> =</p>
+<p>需要到 theme/landspace/layout/_partial/ 目录下修改after-footer.ejs文件。</p>
+<p>把第17行//ajax.googleapis.com/jquery/2.0.3/jquery.min.js替换成//cdn.bootcss.com/jquery/2.0.3/jquery.min.js，使用国内的jquey cdn</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文只是介绍了最快的方式利用Hexo来搭建自己的个人博客，Hexo本身还有很多可以自定义的地方，比如更换站点的主题，自己定义页面和模板。</p>
 <p>更多的Hexo的相关内容请移步Hexo官网学习</p>
 <ul>
@@ -234,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.tech-tea.cn/2019-09-22/hexo-quick-start/" data-id="ck0v3cl670000z9mxh8kuc19b" class="article-share-link">Share</a>
+      <a data-url="https://tech-tea.cn/2019-09-22/hexo-quick-start/" data-id="ck0v4bn9f00000bko4grf6b89" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Travis-CI/">Travis CI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人博客/">个人博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/建站/">建站</a></li></ul>
