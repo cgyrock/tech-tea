@@ -20,7 +20,7 @@ Hexo 是一个快速、简洁且高效的博客框架。
 
 Hexo 使用 Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
 
-# 使用Hexo前需要掌握的技能
+# 准备工作
 
 **Markdown**
 
@@ -42,8 +42,8 @@ Hexo是基于node.js编写的框架，安装和运行都需要先安装node.js�
 
 **Git**
 
-先在自己的Github账号中为自己的个人博客创建一个repository。
-把Hexo生成的站点文件提交后，就可以通过下面的url来访问你的个人博客了。
+注册一个Github账号中，为个人博客创建一个repository。
+把Hexo生成的站点文件提交到repository后，就可以通过下面的url来访问你的个人博客了。
 
 ```
 https://<你的 GitHub 用户名>.github.io/<repository 的名字>
