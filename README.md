@@ -1,2 +1,0 @@
-# tech-tea
-Personal blog
