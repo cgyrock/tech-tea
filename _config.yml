@@ -8,7 +8,7 @@ subtitle: 茶话技术
 description:
 keywords:
 author: Drol Chan
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -79,8 +79,3 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
-
-# NexT
-
-# 评论插件 来必利
-livere_uid: MTAyMC80Njc2NS8yMzI2Nw==
