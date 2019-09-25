@@ -2,6 +2,12 @@
 title: Hexo第三方主题NexT
 date: 2019-09-25 21:49:51
 tags:
+  - Hexo
+  - next
+  - 主题
+  - git
+categories:
+  - 搭建博客
 ---
 
 

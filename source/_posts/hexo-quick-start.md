@@ -2,14 +2,11 @@
 title: Hexo极速搭建个人博客
 tags:
   - Hexo
-  - 建站
-  - 个人博客
   - Travis CI
   - GitHub Pages
   - Markdown
 categories:
-  - 教程
-  - 工具
+  - 搭建博客
 date: 2019-09-22 21:54:50
 ---
 
