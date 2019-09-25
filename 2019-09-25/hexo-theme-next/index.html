@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="前几天第一次尝试使用Hexo在Github Pages上搭建自己的个人博客。完成所有基本工作后，很快就意识到一个问题，官方默认主题真是贼JB丑= =还好Hexo本身就是一个支持自定义主题和插件的框架，官网上也有很多第三方主题。 应用主题应用第三方主题的方法也很简单。只要把第三方主题下载下来，放到站点根目录的themes目录下。修改站点根目录_config.yml里theme值为第三方主题名称就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo第三方主题NexT">
+<meta property="og:url" content="https://tech-tea.cn/2019-09-25/hexo-theme-next/index.html">
+<meta property="og:site_name" content="Tech-Tea">
+<meta property="og:description" content="前几天第一次尝试使用Hexo在Github Pages上搭建自己的个人博客。完成所有基本工作后，很快就意识到一个问题，官方默认主题真是贼JB丑= =还好Hexo本身就是一个支持自定义主题和插件的框架，官网上也有很多第三方主题。 应用主题应用第三方主题的方法也很简单。只要把第三方主题下载下来，放到站点根目录的themes目录下。修改站点根目录_config.yml里theme值为第三方主题名称就">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://picbed.catfoodworks.com/WechatIMG322.jpeg">
+<meta property="og:image" content="http://picbed.catfoodworks.com/WeChat03efe61f3e08feacf8c4fced5b9ae3a7.png">
+<meta property="og:image" content="https://d33wubrfki0l68.cloudfront.net/87468aa2a2f0adbbff8a6e0e6015d4649ca31c2d/af2b3/images/docs/next-schemes.png">
+<meta property="og:image" content="http://picbed.catfoodworks.com/WechatIMG323.jpeg">
+<meta property="og:updated_time" content="2019-09-25T13:51:03.452Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo第三方主题NexT">
+<meta name="twitter:description" content="前几天第一次尝试使用Hexo在Github Pages上搭建自己的个人博客。完成所有基本工作后，很快就意识到一个问题，官方默认主题真是贼JB丑= =还好Hexo本身就是一个支持自定义主题和插件的框架，官网上也有很多第三方主题。 应用主题应用第三方主题的方法也很简单。只要把第三方主题下载下来，放到站点根目录的themes目录下。修改站点根目录_config.yml里theme值为第三方主题名称就">
+<meta name="twitter:image" content="http://picbed.catfoodworks.com/WechatIMG322.jpeg">
+  <link rel="canonical" href="https://tech-tea.cn/2019-09-25/hexo-theme-next/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Hexo第三方主题NexT | Tech-Tea</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tech-Tea</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">茶话技术</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://tech-tea.cn/2019-09-25/hexo-theme-next/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Drol Chan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech-Tea">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Hexo第三方主题NexT
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-25 21:49:51 / 修改时间：21:51:03" itemprop="dateCreated datePublished" datetime="2019-09-25T21:49:51+08:00">2019-09-25</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img src="http://picbed.catfoodworks.com/WechatIMG322.jpeg" width="400px">
+
+<p>前几天第一次尝试使用Hexo在Github Pages上搭建自己的个人博客。<br>完成所有基本工作后，很快就意识到一个问题，官方默认主题真是贼JB丑= =<br>还好Hexo本身就是一个支持自定义主题和插件的框架，官网上也有很多第三方主题。</p>
+<h1 id="应用主题"><a href="#应用主题" class="headerlink" title="应用主题"></a>应用主题</h1><p>应用第三方主题的方法也很简单。<br>只要把第三方主题下载下来，放到站点根目录的themes目录下。<br>修改站点根目录_config.yml里theme值为第三方主题名称就可以了。<br>主题根目录下也有一个_config.yml文件，<br>里面的配置项是针对主题配置的一些属性值和控制项，<br>大部分主题可以通过这个文件做一些个性化定制。</p>
+<a id="more"></a>
+
+<h1 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a>NexT</h1><img src="http://picbed.catfoodworks.com/WeChat03efe61f3e08feacf8c4fced5b9ae3a7.png" width="800px">
+
+<p>官网上有200多个主题看得眼花缭乱。<br>最后直接网上搜，发现一款对入门很友好，对扩展也很友好的主题 - NexT<br>直接搜索Next大概率会搜到 <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">http://theme-next.iissnan.com/</a> 这个中文网站。<br>一开始我以为这就是官网，后来发现这里Github项目是iissnan/hexo-theme-next。<br>应该是一个基于next作了一番定制的版本，而且好像不是基于最新版的Next。</p>
+<p>真心觉得这个中文网的文档做得很漂亮，很容易阅读。但是因为个人洁癖的原因，还是希望能使用原版的next。<br>一番搜索，github上找到了原项目（其实是在上面那一版的配置文件里的注释发现了原版项目url地址）</p>
+<ul>
+<li>theme-next/hexo-theme-next</li>
+</ul>
+<p>按照官网文档操作，在自己站点项目themes目录下执行git clone命令，把整个项目拉下来（这个操作挺坑的= =，后面说）。然后修改站点_config.yml文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">language: zh-CN # 设置主题语言为中文，注意如果是iissnan/hexo-theme-next这个项目，这个值是zh-Hans，不明白他们为啥要改这个值的定义= =。</span><br><span class="line">theme: next # 指定站点使用主题为next</span><br></pre></td></tr></table></figure>
+
+<p>然后hexo serve启动服务器就可以在本地看到新的主题了！</p>
+<h1 id="Next-Scheme"><a href="#Next-Scheme" class="headerlink" title="Next Scheme"></a>Next Scheme</h1><img src="https://d33wubrfki0l68.cloudfront.net/87468aa2a2f0adbbff8a6e0e6015d4649ca31c2d/af2b3/images/docs/next-schemes.png" width="800px">
+
+<p>Next这个主题本身支持四种scheme，就是主题预定义布局方式，个人比较喜欢Mist这个布局。<br>修改scheme很简单，打开next目录下的_config.yml文件，搜索Schemes，就可以找到对应的scheme配置项了，默认scheme是Muse</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Schemes</span><br><span class="line">scheme: Muse</span><br><span class="line"><span class="meta">#</span>scheme: Mist</span><br><span class="line"><span class="meta">#</span>scheme: Pisces</span><br><span class="line"><span class="meta">#</span>scheme: Gemini</span><br></pre></td></tr></table></figure>
+
+<p>好了，发布到线上吧，git push，等待 travis CI 生成并发布。<br>通过域名访问自己博客，一看傻眼了，一片空白= =。</p>
+<h1 id="git-submodule"><a href="#git-submodule" class="headerlink" title="git submodule"></a>git submodule</h1><p>回到github上，看自己博客项目代码目录，themes/next 这个目录是空的！<br>想想也对，刚才next是通过git clone拉下来的别人的repository，当然不会提交到我的repository里啦。</p>
+<p>一番搜索后，解决方法有两种，第一把next的.git删除了，那他就和原来repository没有关系了，只是文件目录。<br>但是这样感觉很不优雅，在项目里提交一堆不是自己写的代码。而且日后想要升级，只能通过拷贝的方式。</p>
+<p>第二种方法就是使用git submodule命令，把next作为博客项目的子模块引入，并不会把next的代码包含到博客项目里，而是创建一个引用到next项目。<br>当然，我肯定还要修改next项目里的_config.yml，所以不能直接引用next项目，因为我没有修改权限。<br>要先去next的github页面上fork一份到自己账号下，这样我就能修改了，然后以后有更新就直接从next项目拉取到我这个fork的项目上就行了。</p>
+<p>回到自己站点项目的themes目录下，把next目录删除，执行命令，添加自己fork的next库为子模块</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git submodule add https://github.com/cgyrock/hexo-theme-next.git next</span><br></pre></td></tr></table></figure>
+
+<p>然后切换到next目录下，创建一个分支，然后在这个分支上修改配置。这时git commit提交的代码是提交到我fork的next项目里的。</p>
+<p>回到站点目录的根目录，要执行子模块更新命令，站点项目才会最终到子模块repository的变化。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git submodule update</span><br></pre></td></tr></table></figure>
+
+<img src="http://picbed.catfoodworks.com/WechatIMG323.jpeg" width="800px">
+
+<p>这个时候总算是完成了，git push，触发travis CI，访问博客，终于看到主题更新了。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019-09-22/hexo-quick-start/" rel="next" title="Hexo极速搭建个人博客">
+                  <i class="fa fa-chevron-left"></i> Hexo极速搭建个人博客
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80Njc2NS8yMzI2Nw=="></div>
+  </div>
+  
+  
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#应用主题"><span class="nav-number">1.</span> <span class="nav-text">应用主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NexT"><span class="nav-number">2.</span> <span class="nav-text">NexT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Next-Scheme"><span class="nav-number">3.</span> <span class="nav-text">Next Scheme</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-submodule"><span class="nav-number">4.</span> <span class="nav-text">git submodule</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Drol Chan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Drol Chan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+<script>
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+</body>
+</html>
