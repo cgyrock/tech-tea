@@ -88,10 +88,8 @@ $ git submodule add https://github.com/cgyrock/hexo-theme-next.git next
 
 然后切换到next目录下，创建一个分支，然后在这个分支上修改配置。这时git commit提交的代码是提交到我fork的next项目里的。
 
-回到站点目录的根目录，要执行子模块更新命令，站点项目才会最终到子模块repository的变化。
-```shell
-$ git submodule update 
-```
+回到站点目录的根目录，git commit把子模块的变化也提交到站点的repository
+
 
 <img src="http://picbed.catfoodworks.com/WechatIMG323.jpeg" width="800px">
 
